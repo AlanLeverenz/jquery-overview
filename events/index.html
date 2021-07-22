@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Crash Course | Selector</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+      font-size: 17px;
+      font-family: arial;
+      background: #f4f4f4;
+      line-height: 1.5em;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px #000 solid;
+      margin-bottom: 10px;
+    }
+
+    #container {
+      width: 90%;
+      margin: auto;
+      padding: 10px
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>jQuery Crash Course</h1>
+  </header>
+  <div id="container">
+    <h3>Mouse Events</h3>
+    <button id="btn1" class="btnClass">Button 1</button>
+    <button id="btn2">Button 2</button>
+    <p class="para1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus harum, libero voluptate, officia
+      temporibus ducimus facere animi accusamus autem vero recusandae et veniam veritatis provident maxime distinctio
+      laboriosam, sunt pariatur.</p>
+    <h1 id="coords"></h1>
+  </div>
+
+  <script>
+    // to wait until the DOM is loaded before running script
+    $(document).ready(function () {
+
+      /*
+      $('#btn1').click(function () {
+        alert('Button Clicked!')
+      })
+
+      $('#btn1').on('click', function () {
+        alert('Button Clicked!')
+      })
+
+      $('#btn1').on('click', () => {
+        // $('.para1').hide();
+        // toggle switches between hide and show
+        $('.para1').toggle();
+        console.log('Button 1 clicked');
+      });
+
+      $('#btn2').on('click', () => {
+        $('.para1').show();
+        console.log('Button 2 clicked');
+      });
+
+      $('#btn1').dblclick(function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').hover(function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').on('hover', function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').on('mouseenter', function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').on('mouseleave', function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').on('mousemove', function () {
+        $('.para1').toggle();
+      })
+
+      $('#btn1').on('mousedown', function () {
+        $('.para1').toggle();
+      })
+      $('#btn1').on('mouseup', function () {
+        $('.para1').toggle();
+      })
+
+      */
+
+      $('#btn1').click(function (e) {
+        console.log(e);
+        // console.log(e.currentTarget.id)
+        // alert(e.currentTarget.innerHTML)
+        // alert(e.currentTarget.outerHTML)
+        // alert(e.currentTarget.className)
+      });
+
+      // $('#btn1').on('mousemove', function (e) {
+      //   console.log('Coords: Y: ' + e.clientY + 'X: ' + e.clientX);
+      // })
+      $(document).on('mousemove', function (e) {
+        // console.log('Coords: Y: ' + e.clientY + 'X: ' + e.clientX);
+        // appends coordinate values to h1 DOM element
+        // $('#coords').append('Coords: Y: ' + e.clientY + 'X: ' + e.clientX);
+        // html replaces each set of values in the DOM element
+        $('#coords').html('Coords: Y: ' + e.clientY + 'X: ' + e.clientX);
+      })
+
+
+    })
+
+  </script>
+
+</body>
+
+</html>
